@@ -1,0 +1,28 @@
+
+
+Funcion prod <- promedio ( datos,n )
+	suma=0
+	Para i<-1 Hasta n Con Paso 1 Hacer
+		suma=suma+datos[i]
+	Fin Para
+	prod=suma/n
+Fin Funcion
+subproceso visualizar(datos,n)
+	escribir"visualizacion de datos"
+    Para i<-1 Hasta n Con Paso 1 Hacer
+		escribir datos[i]
+	Fin Para
+FinSubProceso
+
+Algoritmo sin_titulo
+	definir n Como Entero
+	escribir "digite un numero"
+	leer n 
+	dimension datos[n]
+	Para i<-1 Hasta n Con Paso 1 Hacer
+		escribir"digite un num",i
+		leer datos[i]
+	Fin Para
+	visualizar(datos,n)
+	escribir"el promedio es  ",promedio(datos,n)
+FinAlgoritmo

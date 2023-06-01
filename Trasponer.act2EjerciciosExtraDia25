@@ -1,0 +1,45 @@
+//Crear una matriz de orden n * m (donde n y m son valores ingresados por el usuario), llenarla
+//con números aleatorios entre 1 y 100 y mostrar su traspuesta.
+Algoritmo Trasponer
+	definir matriz, n, aux Como Entero
+	Escribir "ingrese dimensiones"
+	leer n
+	Dimension matriz(n,n)
+	aux=0
+	LlenarMatriz(matriz,n)
+	PrintMatriz(matriz, n)
+	TransponerMatriz(matriz, n, aux)
+	PrintMatriz(matriz, n)
+	
+FinAlgoritmo
+
+SubProceso LlenarMatriz(matriz, n)
+	definir i, j Como Entero
+	Para i=0 Hasta n-1 Con Paso 1 Hacer
+		Para j=0 Hasta n-1 Con Paso 1 Hacer
+			matriz(i,j)=Aleatorio(1,100)
+		Fin Para
+	Fin Para
+FinSubProceso
+
+SubProceso PrintMatriz(matriz,n)
+	definir i,j como entero
+	Para i=0 Hasta n-1 Con Paso 1 Hacer
+		Para j=0 Hasta n-1 Con Paso 1 Hacer
+			escribir Sin Saltar "[" matriz(i,j) "] "
+		Fin Para
+		escribir ""
+	Fin Para
+FinSubProceso
+
+SubProceso TransponerMatriz(matriz,n, aux)
+	definir i,j como entero
+	Escribir "La matriz traspuesta es"
+	Para i=0 Hasta n-1 Con Paso 1 Hacer
+		Para j=i+1 Hasta n-1 Con Paso 1 Hacer
+			aux = matriz[i, j]
+            matriz[i, j] = matriz[j, i]
+            matriz[j, i] = aux
+		Fin Para
+	Fin Para
+FinSubProceso
